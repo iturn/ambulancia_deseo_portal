@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('users', 'UserController@index');
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('whishes', 'WhishController@index');
+Route::get('whishes/create', 'WhishController@create');
+Route::get('whishes/{id}', 'WhishController@show');
+Route::patch('whishes/{id}', 'WhishController@update');
+Route::post('whishes', 'WhishController@store');
